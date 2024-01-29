@@ -1,3 +1,5 @@
+import ButtonComponent from "./ButtonComponent";
+
 const RenderProducts = (props) => {
   const {
     list = [],
@@ -14,9 +16,9 @@ const RenderProducts = (props) => {
             <img src={item.image} style={{ height: 80, width: 50 }} />
             {item.description}
             <p>Price: {item.price}</p>
-            <button onClick={() => decrement(item)}>-</button>
+            <ButtonComponent onClick={()=>decrement(item)} text={'-'}/>
             <p>Quantity:{display(item)}</p>
-            <button onClick={() => increment(item)}>+</button>
+            <ButtonComponent onClick={()=>increment(item)} text={'+'}/>
           </div>
         );
       })}
